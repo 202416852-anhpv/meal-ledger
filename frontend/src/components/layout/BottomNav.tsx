@@ -43,7 +43,10 @@ export const BottomNav = () => {
     <nav className="fixed bottom-0 left-0 right-0 h-14 grid grid-cols-5 border-t border-gray-400 bg-white">
       {navItems.map((item) => {
         const Icon = item.icon;
-        const isActive = location.pathname === item.path;
+        const isActive =
+          item.path === "/"
+            ? location.pathname === "/"
+            : location.pathname.startsWith(item.path);
 
         return (
           <button
@@ -52,7 +55,7 @@ export const BottomNav = () => {
             className="flex flex-col items-center justify-center"
           >
             <Icon
-              className={`h-6 w-6 ${isActive ? "text-orange-400 " : "text-gray-400"}`}
+              className={`h-6 w-6 ${isActive ? "text-orange-400" : "text-gray-400"}`}
             />
             <span
               className={`text-[12px] ${isActive ? "text-orange-400" : "text-gray-400"}`}
