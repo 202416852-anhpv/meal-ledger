@@ -9,15 +9,18 @@ export default function AddMeal() {
     <div>
       <TopBar title="Thêm bữa ăn" />
       <form>
-        <h2>Nhập nhanh thông tin</h2>
-        <textarea
-          value={rawText}
-          onChange={(e) => setRawText(e.target.value)}
-          placeholder=""
-          required
-        />
+        <div className="px-4">
+          <h2 className="mt-8 text-xl">Nhập nhanh thông tin</h2>
+          <textarea
+            value={rawText}
+            onChange={(e) => setRawText(e.target.value)}
+            placeholder=""
+            required
+            className="w-full border border-gray-400 rounded-md h-32 my-4"
+          />
+        </div>
+        <Button type="submit" label="Phân tích" />
       </form>
-      <Button label="Phân tích" />
     </div>
   );
 }
