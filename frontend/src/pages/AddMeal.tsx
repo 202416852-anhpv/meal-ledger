@@ -23,10 +23,10 @@ export default function AddMeal() {
             onChange={(e) => setRawText(e.target.value)}
             placeholder=""
             required
-            className="w-full border border-gray-400 rounded-md h-32 my-4 p-2"
+            className="w-full border border-gray-400 rounded-md h-32 my-4 p-4"
           />
+          <Button type="submit" label="Phân tích" />
         </div>
-        <Button type="submit" label="Phân tích" />
       </form>
     </div>
   );
