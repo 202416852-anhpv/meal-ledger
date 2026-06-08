@@ -40,7 +40,7 @@ export const BottomNav = () => {
   ];
 
   return (
-    <nav className="fixed bottom-0 left-0 right-0 h-14 grid grid-cols-5 border-t border-gray-400 bg-white">
+    <nav className="left-0 right-0 h-14 grid grid-cols-5 border-t border-gray-400 bg-white sticky bottom-0">
       {navItems.map((item) => {
         const Icon = item.icon;
         const isActive =

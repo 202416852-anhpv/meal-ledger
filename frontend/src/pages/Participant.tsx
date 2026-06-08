@@ -39,6 +39,39 @@ export default function AddMealDetail() {
             onDelete={() => {}}
           />
         </div>
+        <div className="mt-8">
+          <InfoCard
+            title="Nguyen Dang Khanh"
+            subTitle="500.000đ"
+            onEdit={() => {}}
+            onDelete={() => {}}
+          />
+        </div>
+        <div className="mt-8">
+          <InfoCard
+            title="Le Dinh Vinh"
+            subTitle="50.000đ"
+            onEdit={() => {}}
+            onDelete={() => {}}
+          />
+        </div>
+        <div className="mt-8">
+          <InfoCard
+            title="Nguyen Tran Nhat Minh"
+            subTitle="1.000.000đ"
+            onEdit={() => {}}
+            onDelete={() => {}}
+          />
+        </div>
+        <div className="mt-8">
+          <InfoCard
+            title="Nguyen Kim Huy"
+            subTitle="200.000đ"
+            onEdit={() => {}}
+            onDelete={() => {}}
+          />
+        </div>
+        <div className="h-8"></div>
       </div>
     </div>
   );
