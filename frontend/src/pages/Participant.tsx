@@ -71,7 +71,7 @@ export default function AddMealDetail() {
             onDelete={() => {}}
           />
         </div>
-        <div className="h-8"></div>
+        <div className="h-20"></div>
       </div>
     </div>
   );
