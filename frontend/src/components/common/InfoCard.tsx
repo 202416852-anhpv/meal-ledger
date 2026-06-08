@@ -27,13 +27,13 @@ export const InfoCard = ({
     <div className="flex justify-between bg-white border border-gray-400 rounded-2xl h-32 p-4">
       <div className="">
         <h2 className="mb-2">{title}</h2>
-        <p>{subTitle}</p>
+        <p className="text-red-600">{subTitle}</p>
       </div>
       <div className="flex flex-col justify-between">
         <button onClick={handleEdit} className="">
           <Pencil />
         </button>
-        <button onClick={handleDelete}>
+        <button onClick={handleDelete} className="">
           <Trash />
         </button>
       </div>
