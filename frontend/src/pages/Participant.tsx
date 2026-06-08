@@ -2,6 +2,7 @@ import { useState } from "react";
 import { SearchBar } from "../components/common/SearchBar";
 import { TopBar } from "../components/layout/TopBar";
 import { AddInputParticipant } from "../components/common/AddInputParticipant";
+import { InfoCard } from "../components/common/InfoCard";
 
 export default function AddMealDetail() {
   const [searchQuery, setSearchQuery] = useState("");
@@ -24,6 +25,18 @@ export default function AddMealDetail() {
             onChange={setNewParticipant}
             onAdd={() => {}}
             placeholder="Thêm thành viên"
+          />
+        </div>
+        <div className="flex justify-between mt-4">
+          <h2>Tất cả thành viên</h2>
+          <p>Sắp xếp</p>
+        </div>
+        <div className="mt-8">
+          <InfoCard
+            title="Pham Viet Anh"
+            subTitle="100.000đ"
+            onEdit={() => {}}
+            onDelete={() => {}}
           />
         </div>
       </div>
