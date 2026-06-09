@@ -12,20 +12,48 @@ export default function AddMealDetail() {
 
   const [participants, setParticipants] = useState<Participant[]>([]);
 
-  useEffect(() => {
-    const fetchParticipants = async () => {
-      try {
-        const res = await participantService.getAll();
-        if (res.success) {
-          setParticipants(res.data);
-        }
-      } catch (err) {
-        console.error(err);
+  const fetchAllParticipants = async () => {
+    try {
+      const res = await participantService.getAll();
+      if (res.success) {
+        setParticipants(res.data);
       }
-    };
+    } catch (err) {
+      console.error(err);
+    }
+  };
 
-    fetchParticipants();
+  useEffect(() => {
+    const initFetch = async () => {
+      await fetchAllParticipants();
+    };
+    initFetch();
   }, []);
+
+  const handleAddParticipant = async () => {
+    if (!newParticipant.trim()) return;
+    try {
+      const res = await participantService.create(newParticipant, 0);
+
+      if (res.success) {
+        setNewParticipant("");
+        fetchAllParticipants();
+      }
+    } catch (err) {
+      console.error(err);
+    }
+  };
+
+  const handleDeleteParticipant = async (id: string) => {
+    try {
+      const res = await participantService.delete(id);
+      if (res.success) {
+        fetchAllParticipants();
+      }
+    } catch (err) {
+      console.error(err);
+    }
+  };
 
   return (
     <div>
@@ -44,7 +72,7 @@ export default function AddMealDetail() {
           <AddInputParticipant
             value={newParticipant}
             onChange={setNewParticipant}
-            onAdd={() => {}}
+            onAdd={handleAddParticipant}
             placeholder="Thêm thành viên"
           />
         </div>
@@ -60,7 +88,7 @@ export default function AddMealDetail() {
                 title={person.name}
                 subTitle={`${person.debt.toLocaleString("vi-VN")}đ`}
                 onEdit={() => {}}
-                onDelete={() => {}}
+                onDelete={() => handleDeleteParticipant(person._id)}
               />
             </div>
           ))}
