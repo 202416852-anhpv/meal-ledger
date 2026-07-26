@@ -47,7 +47,7 @@ export default function BottomNavBar() {
 
           return (
             <NavLink
-              className={`flex flex-col justify-center items-center ${isActive ? "text-orange-400" : ""}`}
+              className={`flex flex-col justify-center items-center text-neutral-400 ${isActive ? "text-orange-400" : ""}`}
               key={item.path}
               to={item.path}
             >

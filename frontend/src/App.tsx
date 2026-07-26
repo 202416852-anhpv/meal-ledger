@@ -4,10 +4,12 @@ import AddMeal from "./pages/AddMeal";
 import NotFound from "./pages/NotFound";
 import MainLayout from "./layouts/MainLayout";
 import AddMealDetail from "./pages/AddMealDetail";
+import Login from "./pages/Login";
 
 export default function App() {
   return (
     <Routes>
+      <Route path="/login" element={<Login />} />
       <Route element={<MainLayout />}>
         <Route path="/" element={<Home />} />
         <Route path="/add-meal" element={<AddMeal />} />

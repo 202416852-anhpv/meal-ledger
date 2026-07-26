@@ -1,9 +1,13 @@
-import { Outlet, useLocation } from "react-router-dom";
+import { Navigate, Outlet, useLocation } from "react-router-dom";
 import TopAppBar from "../components/TopAppBar";
 import BottomNavBar from "../components/BottomNavbar";
 
 export default function MainLayout() {
   const location = useLocation();
+  const token = localStorage.getItem("token");
+
+  if (!token) return <Navigate to="/login" />;
+
   const titles: Record<string, string> = {
     "/": "Trang chủ",
     "/add-meal": "Thêm bữa ăn",
